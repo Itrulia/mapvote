@@ -1,0 +1,10 @@
+.l-container {
+  flex-grow: 1;
+  position: relative;
+  padding: 0.75em;
+  width: 100%;
+
+  @include media-query("desktop") {
+    //max-width: 1100px;
+  }
+}

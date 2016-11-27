@@ -1,0 +1,74 @@
+/* ==========================================================================
+   #GAME
+   ========================================================================== */
+
+.c-game {
+  color: #d7dde8;
+  display: flex;
+  flex-flow: column wrap;
+  cursor: pointer;
+  padding: 1.5em 0.75em;
+  height: 350px;
+  width: 100%;
+  position: relative;
+  border-radius: 4px;
+  background-color: #1f252c;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 1px 4px 0 rgba(17, 18, 21, 0.8);
+}
+
+.c-game__overlay {
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(rgba(38, 42, 53, 0.25) 0%, rgba(38, 42, 53, 0.9) 120%);
+}
+
+.c-game__wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  color: #eee;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.c-game__wrapper__action {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  width: 1.5em;
+  color: #eee;
+
+  path {
+    fill: currentColor;
+  }
+}
+
+.c-game__logo {
+  flex: 1 0 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.c-game__logo__image {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 75px;
+  margin-bottom: 2em;
+}
+
+.c-game__description {
+  position: relative;
+  font-size: 0.75em;
+}

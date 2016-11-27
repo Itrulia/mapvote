@@ -1,0 +1,37 @@
+<div class="c-mapvote o-grid o-grid--inside">
+    <h2 class="c-mapvote__title" *ngIf="isBanPhase()">Ban Map</h2>
+    <h2 class="c-mapvote__title" *ngIf="isPickPhase()">Pick Map</h2>
+    <h2 class="c-mapvote__title" *ngIf="!isBanPhase() && !isPickPhase()">Ready to play!</h2>
+
+    <div class="o-grid__item u-1/1" *ngIf="!isBanPhase() && !isPickPhase()">
+        <div class="c-mapvote__maps o-grid o-grid--inside">
+            <div *ngFor="let map of mapVote?.selected" class="o-grid__item">
+                <div class="c-mapvote__map c-mapvote__map--play u-depth--1">
+                    <img class="c-mapvote__map__background" src="{{ getMapByName(map.name)?.image }}" alt="">
+                    {{ map.name }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="o-grid__item u-1/1">
+        <div class="c-mapvote__votes o-grid o-grid--inside">
+
+            <div *ngFor="let map of game?.maps; let i = index" class="o-grid__item u-1/2">
+
+                <div class="c-mapvote__vote u-depth--1" [ngClass]="{'is-banned': isBanned(getMapByIndex(i)), 'is-selected': isSelected(getMapByIndex(i)),
+            'c-mapvote__vote--team-a': i % 2 == 0, 'c-mapvote__vote--team-b': i % 2 == 1}">
+
+                    <div class="c-mapvote__vote__teamname" *ngIf="getMapByIndex(i)">{{ getMapByIndex(i)?.name }}</div>
+                    <div class="c-mapvote__vote__teamname" *ngIf="!getMapByIndex(i)">
+                        <span *ngIf="i > (game?.maps.length - mapVote?.bestOf - 1)"><em>Pick</em></span>
+                        <span *ngIf="i <= (game?.maps.length - mapVote?.bestOf - 1)"><em>Ban</em></span>
+                    </div>
+
+                    <img class="c-mapvote__vote__image" *ngIf="getMapByIndex(i)" src="{{ getMapByIndex(i)?.image }}" alt="">
+                    <img class="c-mapvote__vote__image" *ngIf="!getMapByIndex(i)" src="http://placehold.it/150x75/343a48/ffffff?text=?">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

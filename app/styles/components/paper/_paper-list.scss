@@ -1,0 +1,41 @@
+/* ==========================================================================
+   #PAPER LIST
+   ========================================================================== */
+
+.c-paper-list {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  list-style: none;
+  margin: 0;
+  font-weight: 500;
+
+  &:first-child {
+    padding-top: 1em;
+  }
+}
+
+.c-paper-list__item {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  padding: 0.5em 1em;
+  color: inherit;
+  text-decoration: inherit;
+
+  &.is-active {
+    background-color: #f0f0f0;
+    color: $primary;
+  }
+}
+
+.c-paper-list__item__text {
+  flex: 1;
+}
+
+.c-paper-list__item__primary-action {
+  align-self: flex-start;
+}
+
+.c-paper-list__item__secondary-action {
+  align-self: flex-start;
+}

@@ -1,0 +1,13 @@
+.l-toolbar {
+  z-index: 100;
+}
+
+@supports (position: sticky) {
+  @include media-query("tablet") {
+    .l-toolbar {
+      position: sticky;
+      top: 0;
+      bottom: initial;
+    }
+  }
+}

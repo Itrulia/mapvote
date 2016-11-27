@@ -1,0 +1,15 @@
+<toolbar class="l-toolbar ng-component"></toolbar>
+<navigation class="ng-component" [user]="user"></navigation>
+
+<main class="l-container">
+    <router-outlet></router-outlet>
+</main>
+
+<footer class="l-footer">
+
+</footer>
+
+<div class="l-shader" [ngClass]="{'is-active': showSidenav}"></div>
+
+<!--<div style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; background-repeat: no-repeat; background-size: 100%"-->
+     <!--[style.background-image]="'url(' + selectedGame?.background + ')'"></div>-->

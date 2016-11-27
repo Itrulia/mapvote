@@ -1,0 +1,30 @@
+.c-toolbar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5em;
+  z-index: 100;
+}
+
+.c-toolbar__menu-button {
+  position: relative;
+  padding: 0;
+  width: 2.5em;
+  height: 2.25em;
+  border: none;
+  font-size: 1.5em;
+  color: transparent;
+  background: transparent;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    bottom: 0.5em;
+    left: 0.5em;
+    background: linear-gradient(currentColor 20%, transparent 20%, transparent 40%, currentColor 40%, currentColor 60%, transparent 60%, transparent 80%, currentColor 80%);
+  }
+}

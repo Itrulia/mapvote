@@ -1,0 +1,41 @@
+<nav class="l-navigation c-navigation u-depth--2" [ngClass]="{'is-open': showSidenav}" #navigation>
+    <div class="c-navigation__user" *ngIf="user">
+        <img src="{{ user.photoURL }}"
+            alt="{{ user.displayName}}'s profile picture"
+            title="{{ user.displayName}}'s profile picture"
+            class="c-navigation__user__avatar"
+        />
+
+        <div class="c-navigation__user__information">
+            <div class="c-navigation__user__name">
+                {{ user.displayName }}
+            </div>
+
+            <div class="c-navigation__user__email">
+                {{ user.email }}
+            </div>
+        </div>
+    </div>
+
+    <ul class="c-paper-list">
+        <li>
+            <a [routerLink]="['/']" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}" class="c-paper-list__item">
+                <span class="c-paper-list__item__text">Home</span>
+            </a>
+        </li>
+
+        <li>
+            <a [routerLink]="['/observer']" routerLinkActive="is-active" class="c-paper-list__item">
+                <span class="c-paper-list__item__text">Mapvote Observer</span>
+            </a>
+        </li>
+    </ul>
+
+    <hr class="paper-divider" *ngIf="!user" />
+
+    <ul class="c-paper-list" *ngIf="!user">
+        <li class="c-paper-list__item">
+            <span class="c-paper-list__item__text" (click)="login()">Login</span>
+        </li>
+    </ul>
+</nav>

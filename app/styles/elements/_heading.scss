@@ -1,0 +1,33 @@
+/* ==========================================================================
+   #HEADING
+   ========================================================================== */
+
+/**
+ * Simple default styles for headings 1 through 6. Anything more opinionated
+ * than simple font changes should likely be applied via classes (see:
+ * http://csswizardry.com/2016/02/managing-typography-on-large-apps/).
+ */
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}

@@ -1,0 +1,135 @@
+/* ==========================================================================
+   #MAPVOTE
+   ========================================================================== */
+
+.c-mapvote {
+  color: #eee;
+}
+
+.c-mapvote__title {
+  font-weight: 500;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 1.5em;
+  width: 100%;
+}
+
+.c-mapvote__maps {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.c-mapvote__map {
+  text-shadow: 0 0 10px #000;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 90px;
+  width: 180px;
+  text-transform: uppercase;
+
+  &.is-banned {
+    border: 2px solid $danger;
+  }
+
+  &.is-selected {
+    border: 2px solid $ok;
+  }
+
+  &.is-banned,
+  &.is-selected {
+    cursor: not-allowed;
+
+    .c-mapvote__map__background {
+      filter: grayscale(100%);
+    }
+  }
+
+  &.is-selected {
+
+  }
+}
+
+.c-mapvote__map--play {
+  height: 130px;
+  width: 260px;
+}
+
+.c-mapvote__map__background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  z-indeX: -1;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+
+.c-mapvote__votes {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  max-width: $desktopwidth;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c-mapvote__vote {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  height: 75px;
+  background: #1e262e;
+  border: 1px solid #5b6e7d;
+
+  &.is-banned {
+    border-color: $danger;
+  }
+
+  &.is-selected {
+    border-color: $ok;
+  }
+}
+
+.c-mapvote__vote--team-a {
+  flex-direction: row-reverse;
+}
+
+.c-mapvote__vote__image {
+  width: 150px;
+  height: 73px;
+  background-color: #000;
+}
+
+.c-mapvote__vote__teamname {
+  flex: 1 0 0;
+  text-align: center;
+}
+
+.c-mapvote__bestof {
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+
+.c-mapvote__reset {
+  margin-top: 5em;
+  text-align: center;
+}
+
+.c-mapvote__bestof__select {
+  background: transparent;
+  bordeR: 0;
+  color: #eee;
+  padding-left: 1em;
+  border-bottom: 1px dashed #eee;
+  text-align: right;
+
+  option {
+    color: #000;
+  }
+}

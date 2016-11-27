@@ -1,0 +1,43 @@
+<div class="c-mapvote o-grid o-grid--inside o-grid--center" *ngIf="this.mapVote && this.game">
+    <div class="c-mapvote__bestof grid__item u-1/1">
+        Best of
+
+        <select class="c-mapvote__bestof__select" (change)="changeBestOf($event.target.value)">
+            <option [value]="1" [selected]="mapVote?.bestOf == 1">1</option>
+            <option [value]="2" [selected]="mapVote?.bestOf == 2">2</option>
+            <option [value]="3" [selected]="mapVote?.bestOf == 3">3</option>
+            <option [value]="5" [selected]="mapVote?.bestOf == 5">5</option>
+            <option [value]="7" [selected]="mapVote?.bestOf == 7">7</option>
+        </select>
+    </div>
+
+    <h2 class="c-mapvote__title" *ngIf="this.game && isBanPhase()">Ban Map</h2>
+    <h2 class="c-mapvote__title" *ngIf="isPickPhase()">Pick Map</h2>
+    <h2 class="c-mapvote__title" *ngIf="!isBanPhase() && !isPickPhase()">Ready to play!</h2>
+
+    <div class="o-grid__item u-1/1" *ngIf="!isBanPhase() && !isPickPhase()">
+        <div class="c-mapvote__maps o-grid o-grid--inside">
+            <div *ngFor="let map of mapVote?.selected" class="o-grid__item">
+                <div class="c-mapvote__map c-mapvote__map--play u-depth--1">
+                    <img class="c-mapvote__map__background" src="{{ getMapByName(map.name)?.image }}" alt="">
+                    {{ map.name }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="o-grid__item u-1/1 u-2/3@desktop" *ngIf="isBanPhase() || isPickPhase()">
+        <div class="c-mapvote__maps o-grid o-grid--inside">
+            <div *ngFor="let map of game?.maps" class="o-grid__item">
+                <div (click)="selectMap(map)" class="c-mapvote__map u-depth--1" [ngClass]="{'is-banned': isBanned(map), 'is-selected': isSelected(map)}">
+                    <img class="c-mapvote__map__background" src="{{ map.image }}" alt="">
+                    {{ map.name }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="c-mapvote__reset grid__item u-1/1">
+        <button class="c-button c-button--raised c-button--primary" (click)="reset()">Reset</button>
+    </div>
+</div>

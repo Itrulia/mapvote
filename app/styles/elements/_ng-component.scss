@@ -1,0 +1,20 @@
+/* ==========================================================================
+   #NG C
+   ========================================================================== */
+
+%ng-component {
+  display: block;
+  width: 100%;
+
+  &::after,
+  &::before {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.ng-component,
+ng-component {
+  @extend %ng-component;
+}

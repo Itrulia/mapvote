@@ -1,0 +1,56 @@
+.c-paper-input {
+  border-bottom-color: #888;
+  font-size: 1em;
+
+  &[disabled] {
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.12);
+    background-color: transparent;
+  }
+}
+
+.c-paper-input__label {
+  font-size: 1em;
+  color: #888;
+
+  &::after {
+    background-color: #3f51b5;
+  }
+}
+
+// Floating
+
+.c-paper-input--floating:focus ~ .c-paper-input__label,
+.c-paper-input--floating.is-touched ~ .c-paper-input__label,
+.c-paper-input--floating.ng-touched ~ .c-paper-input__label {
+  color: #666;
+  font-size: 0.75em;
+}
+
+.c-paper-input--floating:focus ~ .c-paper-input__label {
+  color: #3f51b5;
+}
+
+// Errors
+.c-paper-input__error {
+  color: #d34336;
+  font-size: 0.75em;
+}
+
+.c-paper-input--floating.ng-dirty:invalid ~ .c-paper-input__label,
+.c-paper-input--floating.is-touched:invalid ~ .c-paper-input__label,
+.c-paper-input--floating.ng-touched:invalid ~ .c-paper-input__label {
+  font-size: 0.75em;
+  color: #d34336;
+}
+
+.c-paper-input.is-touched:invalid ~ .c-paper-input__label::after,
+.c-paper-input.ng-touched:invalid ~ .c-paper-input__label::after,
+.c-paper-input.ng-dirty:invalid ~ .c-paper-input__label::after {
+  background-color: #d34336;
+}
+
+.c-paper-input.is-touched:invalid,
+.c-paper-input.ng-touched:invalid {
+  border-color: #d34336;
+  color: #d34336;
+}

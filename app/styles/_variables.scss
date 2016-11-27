@@ -1,0 +1,31 @@
+$white: #fff;
+
+$ok: #a1d9b1;
+$info: #f25f5c;
+$warning: #ffe066;
+$danger: #f25f5c;
+
+$primary: #247ba0;
+$secondary: $danger;
+$tertiary: #2f3238;
+$accent: $warning;
+$alternative-accent: $ok;
+
+$background: rgb(52, 58, 72);
+$background-light: $background;
+
+:root {
+  --ok: $ok;
+  --info: $info;
+  --warning: $warning;
+  --danger: $danger;
+
+  --primary: $primary;
+  --secondary: $secondary;
+  --tertiary: $tertiary;
+  --accent: $accent;
+  --alternative-accent: $alternative-accent;
+
+  --background: $background;
+  --background-light: $background-light;
+}
